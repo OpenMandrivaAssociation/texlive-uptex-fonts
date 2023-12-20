@@ -1,6 +1,6 @@
 Name:		texlive-uptex-fonts
-Version:	62592
-Release:	2
+Version:	68297
+Release:	1
 Summary:	Fonts for use with upTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/uptex-fonts
