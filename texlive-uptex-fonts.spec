@@ -3,7 +3,7 @@ Version:	68297
 Release:	1
 Summary:	Fonts for use with upTeX
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/uptex-fonts
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/uptex-fonts
 License:	bsd3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/uptex-fonts.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/uptex-fonts.doc.r%{version}.tar.xz
