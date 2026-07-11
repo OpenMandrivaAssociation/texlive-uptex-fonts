@@ -1,40 +1,20 @@
-Name:		texlive-uptex-fonts
-Version:	68297
+%global tl_name uptex-fonts
+%global tl_revision 74119
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
 Release:	1
 Summary:	Fonts for use with upTeX
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/uptex-fonts
+URL:		https://www.ctan.org/tex-archive/fonts/uptex-fonts
 License:	bsd3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/uptex-fonts.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/uptex-fonts.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/uptex-fonts.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/uptex-fonts.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The bundle contains fonts (TFM and VF) for use with upTeX. This
-is a redistribution derived from the upTeX distribution by
-Takuji Tanaka.
+The bundle contains fonts (TFM and VF) for use with upTeX. This is a
+redistribution derived from the upTeX distribution by Takuji Tanaka.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/fonts/vf/uptex-fonts
-%{_texmfdistdir}/fonts/tfm/uptex-fonts
-%doc %{_texmfdistdir}/fonts/source/uptex-fonts
-%{_texmfdistdir}/fonts/cmap/uptex-fonts
-%doc %{_texmfdistdir}/doc/fonts/uptex-fonts
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
